@@ -1,4 +1,4 @@
-token: "3MJSvJSXz4KaUKsP"     # lichess OAuth2 Token
+token: "EY6Hmd80uPiav1pB"     # lichess OAuth2 Token
 url: "https://lichess.org/"  # lichess base URL
 
 engine:                      # engine settings
@@ -12,6 +12,11 @@ engine:                      # engine settings
       standard: # list of book file paths for variant standard
         - komodo.bin
         - elo3300.bin
+        - CerebellumNN.bin
+        - comptour.bin
+        - infinitychess.bin
+        - tcec.bin
+        - ccc.bin
 #      atomic: # list of book file paths for variant atomic
 #      etc.
 #      use the same pattern for giveaway, crazyhouse, horde, kingofthehill, racingkings, 3check as well
@@ -22,7 +27,7 @@ engine:                      # engine settings
 #   cpuct: 3.1
   uci_options:               # arbitrary UCI options passed to the engine
  
-option name Contempt type spin : 24
+option name Contempt type spin : 0
 option name Analysis Contempt type combo : Both var Off var White var Black var Both
 option name Threads type spin : 512
 option name Hash type spin : 33554432
