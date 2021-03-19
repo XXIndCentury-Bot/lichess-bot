@@ -13,10 +13,7 @@ engine:                      # engine settings
         - komodo.bin
         - elo3300.bin
         - CerebellumNN.bin
-        - comptour.bin
-        - infinitychess.bin
-        - tcec.bin
-        - ccc.bin
+                
 #      atomic: # list of book file paths for variant atomic
 #      etc.
 #      use the same pattern for giveaway, crazyhouse, horde, kingofthehill, racingkings, 3check as well
