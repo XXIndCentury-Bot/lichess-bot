@@ -17,8 +17,8 @@ class Conversation():
         pass
 
     def command(self, line, game, cmd):
-        if cmd == "commands" or cmd == "help":
-            self.send_reply(line, "Supported commands: !wait(only usable at the start of the game!),!engine, !eval, !queue, !time")
+        if cmd == "commands" or cmd == "!":
+            self.send_reply(line, "Supported commands: !wait(only usable at the start of the game!),!engine, !eval, !queue, !time, ")
         elif cmd == "wait" and game.is_abortable():
             game.ping(30, 60)
             self.send_reply(line, "Waiting 30 seconds...")
@@ -37,8 +37,7 @@ class Conversation():
                 self.send_reply(line, "No challenges as yet.")
          elif cmd == "time":
             self.send_reply(line, "est = timezone('EST')
-print("Time in EST:", datetime.now(est))")
-
+                                   print("Time in EST:", datetime.now(est))")
     def send_reply(self, line, reply):
         self.xhr.chat(self.game.id, line.room, reply)
 
