@@ -18,7 +18,7 @@ class Conversation():
 
     def command(self, line, game, cmd):
         if cmd == "commands" or cmd == "!":
-            self.send_reply(line, "Supported commands: !wait(only usable at the start of the game!),!engine, !eval, !queue, !fact, !time(if someone can help me out with this, I would be grateful; currently not working. ")
+            self.send_reply(line, "Supported commands: !wait(only usable at the start of the game!),!engine, !eval, !fact, !time(if someone can help me out with this, I would be grateful; currently not working. ")
         elif cmd == "wait" and game.is_abortable():
             game.ping(30, 60)
             self.send_reply(line, "Waiting 30 seconds...")
@@ -31,18 +31,12 @@ class Conversation():
             self.send_reply(line, "That's the evaluation of the position according to my engine! ")
         elif cmd == "fact":
             self.send_reply(line, "This game is also live at https://lichess.org/broadcast/live-games/7nPtJBfr!")
-        elif cmd == "queue":
-            if self.challengers:
-                challengers = ", ".join(["@" + challenger.challenger_name for challenger in reversed(self.challengers)])
-                self.send_reply(line, "Challenge queue: {}".format(challengers))
-            else:
-                self.send_reply(line, "No challenges as yet.")
-         
-       def send_reply(self, line, reply):
+
+    def send_reply(self, line, reply):
         self.xhr.chat(self.game.id, line.room, reply)
 
 
-class ChatLine():
+class ChatLine:
     def __init__(self, json):
         self.room = json.get("room")
         self.username = json.get("username")
