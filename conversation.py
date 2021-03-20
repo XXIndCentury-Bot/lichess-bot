@@ -17,7 +17,7 @@ class Conversation():
         pass
 
     def command(self, line, game, cmd):
-        if cmd == "cmd":
+        elif cmd == "":
             self.send_reply(line, "Supported commands: !wait(only usable at the start of the game!),!engine, !eval, !fact, !time(if someone can help me out with this, I would be grateful; currently not working.")
         elif cmd == "wait" and game.is_abortable():
             game.ping(30, 60)
@@ -28,7 +28,7 @@ class Conversation():
             stats = self.engine.get_stats()
             self.send_reply(line, ", ".join(stats))
         elif cmd == "eval":
-            self.send_reply(line, "That's the evaluation of the position according to my engine! ")
+            self.send_reply(line, "That's the evaluation of the position according to my engine!")
         elif cmd == "fact":
             self.send_reply(line, "This game is also live at https://lichess.org/broadcast/live-games/7nPtJBfr!")
 
