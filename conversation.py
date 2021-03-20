@@ -29,16 +29,16 @@ class Conversation():
             self.send_reply(line, ", ".join(stats))
         elif cmd == "eval":
             self.send_reply(line, "That's the evaluation of the position according to my engine! ")
+        elif cmd == "fact":
+            self.send_reply(line, "This game is also live at https://lichess.org/broadcast/live-games/7nPtJBfr!")
         elif cmd == "queue":
             if self.challengers:
                 challengers = ", ".join(["@" + challenger.challenger_name for challenger in reversed(self.challengers)])
                 self.send_reply(line, "Challenge queue: {}".format(challengers))
             else:
                 self.send_reply(line, "No challenges as yet.")
-          elif cmd == "fact":
-            self.send_reply(line, "This game is also live at https://lichess.org/broadcast/live-games/7nPtJBfr!")
-
-    def send_reply(self, line, reply):
+         
+       def send_reply(self, line, reply):
         self.xhr.chat(self.game.id, line.room, reply)
 
 
