@@ -96,6 +96,6 @@ challenge:                   # incoming challenges
 # modes can also be edited from the model.py file
 
 # Print the message in the player or spectator chats at the beginning of each game
-msgPlayer: "Thank you for the game "
-msgSpectator: "Thank you for watching my game " 
+msgPlayer: "Hello opponent! This game is also live at https://lichess.org/broadcast/live-games/7nPtJBfr!"
+msgSpectator: "Hello spectators! This game is also live at https://lichess.org/broadcast/live-games/7nPtJBfr!" 
 # Please be nice in the chat
