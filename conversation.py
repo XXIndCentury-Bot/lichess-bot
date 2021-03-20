@@ -17,7 +17,7 @@ class Conversation():
         pass
 
     def command(self, line, game, cmd):
-        if cmd == "commands" or cmd == "!":
+        if cmd == "":
             self.send_reply(line, "Supported commands: !wait(only usable at the start of the game!),!engine, !eval, !fact, !time(if someone can help me out with this, I would be grateful; currently not working. ")
         elif cmd == "wait" and game.is_abortable():
             game.ping(30, 60)
