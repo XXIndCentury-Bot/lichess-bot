@@ -91,5 +91,11 @@ challenge:                   # incoming challenges
     - casual                 # unrated games
 #   - rated                  # rated games - must comment if the engine doesn't try to win
 
-msgPlayer: "This game is also live at https://lichess.org/broadcast/live-games/7nPtJBfr! Type ! to get a list of commands!"
-msgSpectator: "Hello Spectators! This game is also live at https://lichess.org/broadcast/live-games/7nPtJBfr! Type ! to get a list of commands!"
+# Notes:
+# Go commands are not passed to engine, please see engine_wrapper.py file instead
+# modes can also be edited from the model.py file
+
+# Print the message in the player or spectator chats at the beginning of each game
+msgPlayer: "Thank you for the game "
+msgSpectator: "Thank you for watching my game " 
+# Please be nice in the chat
