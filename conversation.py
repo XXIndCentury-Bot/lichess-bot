@@ -35,29 +35,9 @@ class Conversation():
                 self.send_reply(line, "Challenge queue: {}".format(challengers))
             else:
                 self.send_reply(line, "No challenges as yet.")
-         elif cmd == "time":
-            self.send_reply(line, "est = timezone('EST')
-                                   print("Time in EST:", datetime.now(est))")
           elif cmd == "fact":
             self.send_reply(line, "This game is also live at https://lichess.org/broadcast/live-games/7nPtJBfr!")
-          elif cmd == "joke":
-            self.send_reply(line, "
- 1. print('What do you get when you cross a snowman with a vampire?')
- 2. input()
- 3. print('Frostbite!')
- 4. print()
- 5. print('What do dentists call an astronaut\'s cavity?')
- 6. input()
- 7. print('A black hole!')
- 8. print()
- 9. print('What do you call an alligator with a vest?')
- 10. input()
- 11. print("An investigator!")
- 12. input()
- 13. print('Why do bees have sticky hair?')
- 14. input()
- 15. print(' Because they have honey combs!')
-                            
+
     def send_reply(self, line, reply):
         self.xhr.chat(self.game.id, line.room, reply)
 
